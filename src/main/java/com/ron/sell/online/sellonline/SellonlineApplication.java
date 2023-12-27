@@ -10,6 +10,7 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 @ComponentScan(basePackages = { "com.ron.*" })
 @EnableJpaRepositories("com.ron.sell.online.repository")
+
 public class SellonlineApplication {
 
     // ********************* see config folder for database connection

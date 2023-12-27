@@ -17,7 +17,7 @@ using this command mvn spring-boot:run
 
 Try calling the private protected endpoint...using the below curl request is not giving any clue it should 
 respond with 401 UNAUTORIZED. It does but we could not see the erorr code..so try in a browser and you will 
-see 401. 
+see 401.  (use CHROME or specificallyh see developer tools network tab)
 
  curl --request GET \
   --url http://localhost:8080/sell-online-api/api/private

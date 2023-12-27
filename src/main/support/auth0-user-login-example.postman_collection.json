@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "515ac3ab-46d9-4fec-8c34-9413343196dc",
+		"name": "auth0-user-login-example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32024808"
+	},
+	"item": [
+		{
+			"name": "call an public open to all method in localhost",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/sell-online-api/api/public",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sell-online-api",
+						"api",
+						"public"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "access-token-from-auth0",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"access_token\", JSON.parse(responseBody).access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"client_id\":\"KfVpe1GD9eRyhmNI0EbzF0Lo0MNwP0rf\",\"client_secret\":\"zyoTze_K4hRuN4RzLgQ4fDWo3vd4RY-XRAwofCJ2GzkrbcfmLvWRI0aD7Ot3slJ-\",\"audience\":\"https://quickstarts/api\",\"grant_type\":\"client_credentials\"}"
+				},
+				"url": {
+					"raw": "https://dev-4bybm7c6skkix2ug.us.auth0.com/oauth/token",
+					"protocol": "https",
+					"host": [
+						"dev-4bybm7c6skkix2ug",
+						"us",
+						"auth0",
+						"com"
+					],
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "call an api protected method in loalhost",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Bearer {{access_token}}"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/sell-online-api/api/private",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sell-online-api",
+						"api",
+						"private"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

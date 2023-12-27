@@ -58,7 +58,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.18</version>
+            <version>1.18.24</version>
         </dependency>
          <dependency>
             <groupId>mysql</groupId>
@@ -187,11 +187,6 @@
             <version>0.7.2</version>
         </dependency>
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.16.16</version>
-        </dependency>
-        <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-jpamodelgen</artifactId>
             <version>${hibernate.version}</version>
@@ -292,14 +287,23 @@
     </dependencies>
 
     <build>
-        <directory>/Users/ronProjects/ronsBuildDir</directory>
-         <outputDirectory>/Users/ronProjects/ronsOutputDir</outputDirectory>
+        
+         <outputDirectory>${project.basedir}/target/classes</outputDirectory>
 
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+             <artifactId>maven-compiler-plugin</artifactId>
+             <version>3.10.0</version>
+            <configuration>
+             <source>11</source>
+             <target>11</target>
+             </configuration>
+             </plugin>
 
         </plugins>
 
