@@ -17,16 +17,16 @@ public class APIController {
 
     @GetMapping(value = "/public")
     public Message publicEndpoint() {
-        return new Message("All good. You DO NOT need to be authenticated to call /api/public.");
+        return new Message("All good. No need to be authenticated or pass a bearer token to call me /api/public.");
     }
 
     @GetMapping(value = "/private")
     public Message privateEndpoint() {
-        return new Message("All good. You can see this because you are Authenticated.");
+        return new Message("All good. You can see this because you sent me the bearer token .");
     }
 
     @GetMapping(value = "/private-scoped")
     public Message privateScopedEndpoint() {
-        return new Message("All good. You can see this because you are Authenticated with a Token granted the 'read:messages' scope");
+        return new Message("All good. You can see this because you passed me a token which was granted the 'read:messages' scope");
     }
 }
