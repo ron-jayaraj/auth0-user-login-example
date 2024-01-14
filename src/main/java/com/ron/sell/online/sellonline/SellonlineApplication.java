@@ -14,9 +14,11 @@ import org.springframework.web.client.RestTemplate;
 public class SellonlineApplication {
 
     // ********************* see config folder for database connection
+
     // *****************
     public static void main(String[] args) {
         SpringApplication.run(SellonlineApplication.class, args);
+        
     }
 
     @Bean
