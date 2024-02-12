@@ -123,6 +123,20 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-freemarker</artifactId>
         </dependency>
+ <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-aop</artifactId>
+</dependency>
+<dependency>
+    <groupId>org.aspectj</groupId>
+    <artifactId>aspectjweaver</artifactId>
+</dependency>
+<dependency>
+    <groupId>com.nimbusds</groupId>
+    <artifactId>nimbus-jose-jwt</artifactId>
+    <version>9.10</version> <!-- Replace with the latest version available -->
+</dependency>
+
         <dependency>
             <groupId>net.sf.barcode4j</groupId>
             <artifactId>barcode4j</artifactId>
@@ -192,21 +206,6 @@
             <version>${hibernate.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.hamcrest</groupId>
-                    <artifactId>hamcrest-core</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.hamcrest</groupId>
-                    <artifactId>hamcrest-library</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
         <dependency>
             <groupId>com.auth0</groupId>
             <artifactId>auth0</artifactId>
